@@ -3,7 +3,7 @@ const path = require('path');
 const {spawn} = require('child_process');
 
 let platform = os.platform();
-if (!['darwin', 'win32'].includes(platform)) {
+if (!['linux','darwin', 'win32'].includes(platform)) {
     console.error(`${platform} is NOT supported.`);
     process.exit(1);
 }

@@ -63,8 +63,8 @@ else if (platform === 'darwin') {
     spawn('install_name_tool', ['-change', `/usr/local/Cellar/poppler/0.66.0/lib/libpoppler.77.dylib`, `${path.join(dyldPath, 'libpoppler.77.0.0.dylib')}`, `${path.join(popplerPath, 'pdfimages')}`]);
 }
 else {
-    console.error(`${platform} is NOT supported.`);
-    process.exit(1);
+  console.log(`${platform} is supported — using system-installed poppler.`);
+  popplerPath = "";
 }
 
 module.exports.path = popplerPath;
